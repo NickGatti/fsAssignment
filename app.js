@@ -14,3 +14,7 @@ if ( !fs.existsSync( dir ) ) {
     fs.mkdirSync( dir );
 }
 fs.createReadStream( './challenge4/info.txt' ).pipe( fs.createWriteStream( './challenge4/copyfolder/info.txt' ) );
+
+let sentence = fs.readFileSync( './challenge5/info.txt', 'utf-8' )
+sentence = sentence.replace( /-/g, ' ' )
+fs.writeFileSync( './challenge5/info.txt', sentence )
